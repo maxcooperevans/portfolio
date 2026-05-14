@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import Nav from "@/components/Nav";
 
@@ -5,59 +8,34 @@ const projects = [
   {
     title: "Book Recommendation Chatbot",
     description:
-      "An AI-powered chatbot that learns your reading taste and surfaces books you'll actually finish. Built with a retrieval-augmented pipeline and a conversational interface.",
-    tags: ["AI", "NLP", "Python"],
-    href: "#",
+      "Input your Goodreads data and get personalised book recommendations powered by AI.",
+    tags: ["AI", "Goodreads", "Python"],
+    href: "https://goodreads-recommender-2q8koi41b-mace-s-projects.vercel.app/",
     icon: "📚",
-  },
-  {
-    title: "Logic Puzzle Game",
-    description:
-      "A browser-based puzzle game featuring procedurally generated logic grids. Tracks streaks, hints used, and solve time with a clean, distraction-free UI.",
-    tags: ["TypeScript", "React", "Game Dev"],
-    href: "#",
-    icon: "🧩",
-  },
-  {
-    title: "Market Mapping Tool",
-    description:
-      "An interactive visualisation that maps competitive landscapes from structured data. Drag-to-explore canvas with filtering, clustering, and export to PNG.",
-    tags: ["Data Viz", "D3.js", "Next.js"],
-    href: "#",
-    icon: "📊",
   },
 ];
 
 export default function Home() {
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Nav />
 
-      {/* Hero */}
       <main className="flex-1 max-w-4xl mx-auto w-full px-6 pt-32 pb-24">
+        {/* Hero */}
         <section className="mb-24">
-          <p className="text-indigo-400 font-medium tracking-widest text-sm uppercase mb-4">
-            Hey, I&apos;m
-          </p>
-          <h1 className="text-6xl font-bold tracking-tight mb-6">
+          <h1 className="text-6xl font-bold tracking-tight mb-10">
             <span className="gradient-text">Max</span>
           </h1>
-          <p className="text-xl text-slate-400 leading-relaxed max-w-2xl">
-            I build things that sit at the intersection of{" "}
-            <span className="text-slate-200 font-medium">data</span>,{" "}
-            <span className="text-slate-200 font-medium">AI</span>, and{" "}
-            <span className="text-slate-200 font-medium">thoughtful design</span>.
-            Currently exploring how language models can make everyday software
-            feel more human — one project at a time.
-          </p>
 
-          <div className="flex gap-4 mt-10">
-            <a
-              href="mailto:hello@example.com"
+          <div className="flex gap-4">
+            <button
+              onClick={() => setContactOpen((o) => !o)}
               className="px-5 py-2.5 rounded-lg bg-indigo-500 hover:bg-indigo-400 text-white text-sm font-medium transition-colors"
             >
-              Get in touch
-            </a>
+              {contactOpen ? "Close" : "Get in touch"}
+            </button>
             <a
               href="#projects"
               className="px-5 py-2.5 rounded-lg border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white text-sm font-medium transition-colors"
@@ -65,6 +43,34 @@ export default function Home() {
               See projects ↓
             </a>
           </div>
+
+          {contactOpen && (
+            <div className="mt-6 p-6 rounded-2xl border border-slate-800 bg-slate-900/50 flex flex-col gap-3 max-w-sm">
+              <a
+                href="mailto:maxcooperevans@gmail.com"
+                className="flex items-center gap-3 text-slate-300 hover:text-indigo-300 transition-colors text-sm"
+              >
+                <span className="text-lg">✉️</span>
+                maxcooperevans@gmail.com
+              </a>
+              <a
+                href="tel:+4407562649909"
+                className="flex items-center gap-3 text-slate-300 hover:text-indigo-300 transition-colors text-sm"
+              >
+                <span className="text-lg">📞</span>
+                +44 07562 649909
+              </a>
+              <a
+                href="https://www.linkedin.com/in/max-cooper-evans-866992230"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-slate-300 hover:text-indigo-300 transition-colors text-sm"
+              >
+                <span className="text-lg">💼</span>
+                linkedin.com/in/max-cooper-evans
+              </a>
+            </div>
+          )}
         </section>
 
         {/* Projects */}
