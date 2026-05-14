@@ -6,6 +6,14 @@ import Nav from "@/components/Nav";
 
 const projects = [
   {
+    title: "Logic Puzzle Game",
+    description:
+      "A browser-based formal logic game featuring procedurally generated formal logic questions.",
+    tags: ["TypeScript", "React", "Game Dev"],
+    href: "https://logic-game-fawn.vercel.app/",
+    icon: "🧩",
+  },
+  {
     title: "Book Recommendation Chatbot",
     description:
       "Input your Goodreads data and get personalised book recommendations powered by AI.",
@@ -20,7 +28,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Nav />
+      <Nav onContact={() => setContactOpen((o) => !o)} />
 
       <main className="flex-1 max-w-4xl mx-auto w-full px-6 pt-32 pb-24">
         {/* Hero */}
