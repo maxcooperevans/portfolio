@@ -14,10 +14,10 @@ const projects = [
     icon: "🧩",
   },
   {
-    title: "Book Recommendation Chatbot",
+    title: "Goodreads Book Recommender",
     description:
-      "Input your Goodreads data and get personalised book recommendations powered by AI.",
-    tags: ["AI", "Goodreads", "Python"],
+      "Input your Goodreads data and get personalised book recommendations.",
+    tags: ["Goodreads", "Python"],
     href: "https://goodreads-recommender-2q8koi41b-mace-s-projects.vercel.app/",
     icon: "📚",
   },
