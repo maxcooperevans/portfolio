@@ -26,7 +26,7 @@ const projects = [
     description:
       "Input your Goodreads data and get personalised book recommendations.",
     tags: ["Goodreads", "Python"],
-    href: "https://goodreads.maxcooperevans.com",
+    href: "https://goodreadsbookrecommender.maxcooperevans.com",
     icon: "📚",
   },
 ];
