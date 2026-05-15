@@ -10,7 +10,7 @@ const projects = [
     description:
       "Enter a company name and get an AI-powered briefing covering key facts, recent news, and business insights.",
     tags: ["AI", "Research", "Next.js"],
-    href: "https://briefing-flr0lf813-mace-s-projects.vercel.app/",
+    href: "https://briefing.maxcooperevans.com",
     icon: "🏢",
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     description:
       "A browser-based formal logic game featuring procedurally generated formal logic questions.",
     tags: ["TypeScript", "React", "Game Dev"],
-    href: "https://logic-game-fawn.vercel.app/",
+    href: "https://logic.maxcooperevans.com",
     icon: "🧩",
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     description:
       "Input your Goodreads data and get personalised book recommendations.",
     tags: ["Goodreads", "Python"],
-    href: "https://goodreads-recommender-2q8koi41b-mace-s-projects.vercel.app/",
+    href: "https://goodreads.maxcooperevans.com",
     icon: "📚",
   },
 ];
