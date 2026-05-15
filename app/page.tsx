@@ -6,6 +6,14 @@ import Nav from "@/components/Nav";
 
 const projects = [
   {
+    title: "Company Briefing Tool",
+    description:
+      "Enter a company name and get an AI-powered briefing covering key facts, recent news, and business insights.",
+    tags: ["AI", "Research", "Next.js"],
+    href: "https://briefing-flr0lf813-mace-s-projects.vercel.app/",
+    icon: "🏢",
+  },
+  {
     title: "Logic Puzzle Game",
     description:
       "A browser-based formal logic game featuring procedurally generated formal logic questions.",
