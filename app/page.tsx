@@ -14,6 +14,14 @@ const projects = [
     icon: "🏢",
   },
   {
+    title: "NYT Mini Crossword Time Tracker",
+    description:
+      "Track and analyse your NYT Mini Crossword solve times. Logs each solve with the date and constructor, and visualises your performance over time.",
+    tags: ["Node.js", "Express", "Supabase"],
+    href: "https://mini.tracker.maxcooperevans.com",
+    icon: "✏️",
+  },
+  {
     title: "Logic Puzzle Game",
     description:
       "A browser-based formal logic game featuring procedurally generated formal logic questions.",
