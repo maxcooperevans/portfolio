@@ -53,10 +53,6 @@ export default function Home() {
       <main className="flex-1 max-w-4xl mx-auto w-full px-6 pt-32 pb-24">
         {/* Hero */}
         <section className="mb-24">
-          <h1 className="text-6xl font-bold tracking-tight mb-10">
-            <span className="gradient-text">Max</span>
-          </h1>
-
           <div className="flex gap-4">
             <button
               onClick={() => setContactOpen((o) => !o)}
