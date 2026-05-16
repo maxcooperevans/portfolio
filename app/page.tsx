@@ -12,14 +12,16 @@ const projects = [
     tags: ["AI", "Research", "Next.js"],
     href: "https://briefing.maxcooperevans.com",
     icon: "🏢",
+    reason: "Makes life a bit easier when researching.",
   },
   {
     title: "NYT Mini Crossword Time Tracker",
     description:
-      "Track and analyse your NYT Mini Crossword solve times. Logs each solve with the date and constructor, and visualises your performance over time.",
+      "Tracking my NYT Mini crossword times and visualising my performance over time.",
     tags: ["Node.js", "Express", "Supabase"],
     href: "https://mini.tracker.maxcooperevans.com",
     icon: "✏️",
+    reason: "Makes it easier to track my stats.",
   },
   {
     title: "Logic Puzzle Game",
@@ -28,6 +30,7 @@ const projects = [
     tags: ["TypeScript", "React", "Game Dev"],
     href: "https://logic.maxcooperevans.com",
     icon: "🧩",
+    reason: "Haven't done any formal logic since first year of undergrad, wanted to test myself.",
   },
   {
     title: "Goodreads Book Recommender",
@@ -36,6 +39,7 @@ const projects = [
     tags: ["Goodreads", "Python"],
     href: "https://goodreadsbookrecommender.maxcooperevans.com",
     icon: "📚",
+    reason: "To make my life easier choosing my next book.",
   },
 ];
 
