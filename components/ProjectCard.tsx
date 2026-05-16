@@ -25,7 +25,7 @@ export default function ProjectCard({
     <div className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/50 transition-all duration-200 card-glow">
       <a
         href={href}
-        className="group flex flex-col gap-4 p-6 hover:-translate-y-0.5 transition-transform duration-200"
+        className="group flex flex-col gap-4 p-6 hover:-translate-y-0.5 transition-transform duration-200 flex-1"
       >
         {/* Icon badge */}
         <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-xl">
