@@ -40,18 +40,6 @@ export default function ProjectCard({
           <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
         </div>
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 text-xs font-medium"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
         {/* Arrow */}
         <div className="text-slate-600 text-sm group-hover:text-indigo-400 transition-colors self-end">
           View project →
