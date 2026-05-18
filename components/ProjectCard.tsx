@@ -6,7 +6,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
-  href: string;
+  href?: string;
   icon: string;
   reason: string;
 }
@@ -23,28 +23,35 @@ export default function ProjectCard({
 
   return (
     <div className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/50 transition-all duration-200 card-glow">
-      <a
-        href={href}
-        className="group flex flex-col gap-4 p-6 hover:-translate-y-0.5 transition-transform duration-200 flex-1"
-      >
-        {/* Icon badge */}
-        <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-xl">
-          {icon}
+      {href ? (
+        <a
+          href={href}
+          className="group flex flex-col gap-4 p-6 hover:-translate-y-0.5 transition-transform duration-200 flex-1"
+        >
+          <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-xl">
+            {icon}
+          </div>
+          <div className="flex-1">
+            <h3 className="text-slate-100 font-semibold text-base mb-2 group-hover:text-indigo-300 transition-colors">
+              {title}
+            </h3>
+            <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
+          </div>
+          <div className="text-slate-600 text-sm group-hover:text-indigo-400 transition-colors self-end">
+            View project →
+          </div>
+        </a>
+      ) : (
+        <div className="flex flex-col gap-4 p-6 flex-1">
+          <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-xl">
+            {icon}
+          </div>
+          <div className="flex-1">
+            <h3 className="text-slate-100 font-semibold text-base mb-2">{title}</h3>
+            <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
+          </div>
         </div>
-
-        {/* Text */}
-        <div className="flex-1">
-          <h3 className="text-slate-100 font-semibold text-base mb-2 group-hover:text-indigo-300 transition-colors">
-            {title}
-          </h3>
-          <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
-        </div>
-
-        {/* Arrow */}
-        <div className="text-slate-600 text-sm group-hover:text-indigo-400 transition-colors self-end">
-          View project →
-        </div>
-      </a>
+      )}
 
       {/* Why I built this */}
       <div className="border-t border-slate-800">

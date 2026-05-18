@@ -15,6 +15,14 @@ const projects = [
     reason: "To make initial research more efficient.",
   },
   {
+    title: "Job Board Scraper & Digest",
+    description:
+      "Scrapes job boards daily, uses the Claude API to score each role against my specific criteria, and sends a formatted email digest every morning via GitHub Actions.",
+    tags: ["Claude API", "Python", "GitHub Actions"],
+    icon: "📋",
+    reason: "Tired of manually checking job boards and comparing them to my requirements.",
+  },
+  {
     title: "NYT Mini Crossword Time Tracker",
     description:
       "Tracking my NYT Mini crossword times and visualising my performance over time.",
