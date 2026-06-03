@@ -6,6 +6,15 @@ import Nav from "@/components/Nav";
 
 const projects = [
   {
+    title: "Investment Memo Generator",
+    description:
+      "V2 of the briefing tool, giving more in-depth analytical insights and a comparison tool.",
+    tags: ["AI", "Next.js"],
+    href: "https://www.memo.maxcooperevans.com/",
+    icon: "📝",
+    reason: "I wanted to take a tool I'd made and improve it.",
+  },
+  {
     title: "Company Briefing Tool",
     description:
       "Enter a company name and get an AI-powered briefing covering key facts, recent news, and business insights.",
