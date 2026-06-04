@@ -15,6 +15,15 @@ const projects = [
     reason: "I wanted to take a tool I'd made and improve it.",
   },
   {
+    title: "Basketball Simulator",
+    description:
+      "Attempt at a basketball simulator game with a user-created player.",
+    tags: ["TypeScript", "React", "Game Dev"],
+    href: "https://hoops.maxcooperevans.com/",
+    icon: "🏀",
+    reason: "Wanted to try making a fairly complex and varied game.",
+  },
+  {
     title: "Company Briefing Tool",
     description:
       "Enter a company name and get an AI-powered briefing covering key facts, recent news, and business insights.",
