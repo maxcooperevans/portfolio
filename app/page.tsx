@@ -103,7 +103,7 @@ export default function Home() {
           </p>
           <button
             onClick={() => setContactOpen((o) => !o)}
-            className="px-5 py-2.5 rounded-lg bg-accent text-white text-sm font-medium hover:opacity-90 transition-opacity"
+            className="px-5 py-2.5 rounded-lg border-[1.5px] border-accent text-accent text-sm font-medium hover:bg-accent-tint transition-colors"
           >
             {contactOpen ? "Close" : "Get in touch"}
           </button>

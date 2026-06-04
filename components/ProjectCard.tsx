@@ -50,7 +50,7 @@ export default function ProjectCard({
   );
 
   return (
-    <div className="flex flex-col rounded-xl border border-edge bg-card transition-all duration-150 hover:border-accent hover:-translate-y-px hover:shadow-sm">
+    <div className="flex flex-col rounded-xl border-[1.5px] border-accent bg-card transition-all duration-150 hover:border-2 hover:-translate-y-px hover:shadow-sm">
       {href ? (
         <a
           href={href}

@@ -34,7 +34,7 @@ export default function Nav({ onContactClick, contactOpen }: NavProps) {
 
   return (
     <nav
-      className="fixed top-0 inset-x-0 z-50 border-b border-edge backdrop-blur-md"
+      className="fixed top-0 inset-x-0 z-50 border-b border-accent backdrop-blur-md"
       style={{ backgroundColor: "var(--nav-bg)" }}
     >
       <div className="max-w-3xl mx-auto px-6 h-14 flex items-center gap-3">
@@ -55,7 +55,7 @@ export default function Nav({ onContactClick, contactOpen }: NavProps) {
 
         <button
           onClick={onContactClick}
-          className="px-4 py-1.5 rounded-full border border-edge text-muted text-sm font-medium hover:border-accent hover:text-accent transition-colors"
+          className="px-4 py-1.5 rounded-full border-[1.5px] border-accent text-accent text-sm font-medium hover:bg-accent-tint transition-colors"
         >
           {contactOpen ? "Close" : "Get in touch"}
         </button>
