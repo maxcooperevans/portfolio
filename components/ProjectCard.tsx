@@ -58,7 +58,7 @@ export default function ProjectCard({
   return (
     <div className="flex flex-col rounded-xl border border-slate-700/60 bg-slate-800/40 hover:border-slate-600/80 hover:bg-slate-800/60 transition-all duration-200">
       {href ? (
-        <a href={href} className="group flex flex-col flex-1">
+        <a href={href} target="_blank" rel="noopener noreferrer" className="group flex flex-col flex-1">
           {cardBody}
         </a>
       ) : (
