@@ -1,71 +1,86 @@
 "use client";
 
 import { useState } from "react";
+import type { LucideIcon } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
   href?: string;
-  icon: string;
+  icon: LucideIcon;
+  iconBg: string;
+  iconColor: string;
   reason: string;
 }
 
 export default function ProjectCard({
   title,
   description,
-  tags,
   href,
-  icon,
+  icon: Icon,
+  iconBg,
+  iconColor,
   reason,
 }: ProjectCardProps) {
   const [open, setOpen] = useState(false);
 
-  return (
-    <div className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/50 transition-all duration-200 card-glow">
-      {href ? (
-        <a
-          href={href}
-          className="group flex flex-col gap-4 p-6 hover:-translate-y-0.5 transition-transform duration-200 flex-1"
+  const cardBody = (
+    <div className="flex flex-col gap-4 p-5 flex-1">
+      {/* Icon square */}
+      <div
+        className={`w-7 h-7 rounded-md flex items-center justify-center ${iconBg} ${iconColor}`}
+      >
+        <Icon size={15} strokeWidth={2} />
+      </div>
+
+      {/* Text */}
+      <div className="flex-1">
+        <h3
+          className={`font-medium text-[15px] mb-1.5 transition-colors ${
+            href ? "text-slate-100 group-hover:text-blue-400" : "text-slate-100"
+          }`}
         >
-          <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-xl">
-            {icon}
-          </div>
-          <div className="flex-1">
-            <h3 className="text-slate-100 font-semibold text-base mb-2 group-hover:text-indigo-300 transition-colors">
-              {title}
-            </h3>
-            <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
-          </div>
-          <div className="text-slate-600 text-sm group-hover:text-indigo-400 transition-colors self-end">
-            View project →
-          </div>
+          {title}
+        </h3>
+        <p className="text-slate-400 text-[13px] leading-relaxed">{description}</p>
+      </div>
+
+      {/* Link or spacer */}
+      {href && (
+        <div className="text-blue-400 text-[13px] font-medium group-hover:text-blue-300 transition-colors">
+          View project →
+        </div>
+      )}
+    </div>
+  );
+
+  return (
+    <div className="flex flex-col rounded-xl border border-slate-700/60 bg-slate-800/40 hover:border-slate-600/80 hover:bg-slate-800/60 transition-all duration-200">
+      {href ? (
+        <a href={href} className="group flex flex-col flex-1">
+          {cardBody}
         </a>
       ) : (
-        <div className="flex flex-col gap-4 p-6 flex-1">
-          <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-xl">
-            {icon}
-          </div>
-          <div className="flex-1">
-            <h3 className="text-slate-100 font-semibold text-base mb-2">{title}</h3>
-            <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
-          </div>
-        </div>
+        <div className="flex flex-col flex-1">{cardBody}</div>
       )}
 
       {/* Why I built this */}
-      <div className="border-t border-slate-800">
+      <div className="border-t border-slate-700/60">
         <button
           onClick={() => setOpen((o) => !o)}
-          className="w-full flex items-center justify-between px-6 py-3 text-xs text-slate-500 hover:text-slate-300 transition-colors"
+          className="w-full flex items-center justify-between px-5 py-3 text-xs text-slate-500 hover:text-slate-300 transition-colors"
         >
           <span>Why I built this</span>
-          <span className="transition-transform duration-200" style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}>
+          <span
+            className="transition-transform duration-200"
+            style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+          >
             ▾
           </span>
         </button>
         {open && (
-          <div className="px-6 pb-4 text-sm text-slate-400 leading-relaxed">
+          <div className="px-5 pb-4 text-[13px] text-slate-400 leading-relaxed">
             {reason}
           </div>
         )}
