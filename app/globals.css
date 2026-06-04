@@ -4,13 +4,51 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Theme tokens ──────────────────────────────────────── */
+
 :root {
-  --background: #0F172A;
-  --foreground: #F1F5F9;
+  --surface:     #FAF8F4;
+  --card:        #FFFFFF;
+  --edge:        #E5E1D8;
+  --heading:     #1A1A18;
+  --muted:       #6B6862;
+  --accent:      #2F6B4F;
+  --accent-tint: #E8F2EC;
+  --nav-bg:      rgba(250, 248, 244, 0.92);
 }
 
+/* Dark via system preference (when no manual override) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface:     #16181A;
+    --card:        #1F2123;
+    --edge:        #33363A;
+    --heading:     #F2F0EB;
+    --muted:       #A2A099;
+    --accent:      #5BA77E;
+    --accent-tint: #1C2E26;
+    --nav-bg:      rgba(22, 24, 26, 0.92);
+  }
+}
+
+/* Dark via manual toggle */
+[data-theme="dark"] {
+  --surface:     #16181A;
+  --card:        #1F2123;
+  --edge:        #33363A;
+  --heading:     #F2F0EB;
+  --muted:       #A2A099;
+  --accent:      #5BA77E;
+  --accent-tint: #1C2E26;
+  --nav-bg:      rgba(22, 24, 26, 0.92);
+}
+
+/* ── Base ─────────────────────────────────────────────── */
+
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--surface);
+  color: var(--heading);
   font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.15s, color 0.15s;
 }

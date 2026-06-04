@@ -9,8 +9,6 @@ interface ProjectCardProps {
   tags: string[];
   href?: string;
   icon: LucideIcon;
-  iconBg: string;
-  iconColor: string;
   reason: string;
 }
 
@@ -19,57 +17,58 @@ export default function ProjectCard({
   description,
   href,
   icon: Icon,
-  iconBg,
-  iconColor,
   reason,
 }: ProjectCardProps) {
   const [open, setOpen] = useState(false);
 
-  const cardBody = (
+  const body = (
     <div className="flex flex-col gap-4 p-5 flex-1">
-      {/* Icon square */}
-      <div
-        className={`w-7 h-7 rounded-md flex items-center justify-center ${iconBg} ${iconColor}`}
-      >
+      {/* Icon square — uniform accent tint for all projects */}
+      <div className="w-7 h-7 rounded-md bg-accent-tint text-accent flex items-center justify-center flex-shrink-0">
         <Icon size={15} strokeWidth={2} />
       </div>
 
       {/* Text */}
-      <div className="flex-1">
+      <div className="flex-1 flex flex-col gap-1.5">
         <h3
-          className={`font-medium text-[15px] mb-1.5 transition-colors ${
-            href ? "text-slate-100 group-hover:text-blue-400" : "text-slate-100"
+          className={`font-medium text-[15px] text-heading transition-colors duration-150${
+            href ? " group-hover:text-accent" : ""
           }`}
         >
           {title}
         </h3>
-        <p className="text-slate-400 text-[13px] leading-relaxed">{description}</p>
+        <p className="text-muted text-[13px] leading-relaxed">{description}</p>
       </div>
 
-      {/* Link or spacer */}
+      {/* View link */}
       {href && (
-        <div className="text-blue-400 text-[13px] font-medium group-hover:text-blue-300 transition-colors">
+        <span className="text-accent text-[13px] font-medium mt-auto">
           View project →
-        </div>
+        </span>
       )}
     </div>
   );
 
   return (
-    <div className="flex flex-col rounded-xl border border-slate-700/60 bg-slate-800/40 hover:border-slate-600/80 hover:bg-slate-800/60 transition-all duration-200">
+    <div className="flex flex-col rounded-xl border border-edge bg-card transition-all duration-150 hover:border-accent hover:-translate-y-px hover:shadow-sm">
       {href ? (
-        <a href={href} target="_blank" rel="noopener noreferrer" className="group flex flex-col flex-1">
-          {cardBody}
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex flex-col flex-1"
+        >
+          {body}
         </a>
       ) : (
-        <div className="flex flex-col flex-1">{cardBody}</div>
+        <div className="flex flex-col flex-1">{body}</div>
       )}
 
-      {/* Why I built this */}
-      <div className="border-t border-slate-700/60">
+      {/* Why I built this — behaviour unchanged */}
+      <div className="border-t border-edge">
         <button
           onClick={() => setOpen((o) => !o)}
-          className="w-full flex items-center justify-between px-5 py-3 text-xs text-slate-500 hover:text-slate-300 transition-colors"
+          className="w-full flex items-center justify-between px-5 py-3 text-xs text-muted hover:text-heading transition-colors"
         >
           <span>Why I built this</span>
           <span
@@ -80,7 +79,7 @@ export default function ProjectCard({
           </span>
         </button>
         {open && (
-          <div className="px-5 pb-4 text-[13px] text-slate-400 leading-relaxed">
+          <div className="px-5 pb-4 text-[13px] text-muted leading-relaxed">
             {reason}
           </div>
         )}

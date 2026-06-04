@@ -21,8 +21,6 @@ const projects = [
     tags: ["AI", "Next.js"],
     href: "https://www.memo.maxcooperevans.com/",
     icon: FileText,
-    iconBg: "bg-blue-500/10",
-    iconColor: "text-blue-400",
     reason: "I wanted to take a tool I'd made and improve it.",
   },
   {
@@ -32,8 +30,6 @@ const projects = [
     tags: ["TypeScript", "React", "Game Dev"],
     href: "https://hoops.maxcooperevans.com/",
     icon: Trophy,
-    iconBg: "bg-amber-500/10",
-    iconColor: "text-amber-400",
     reason: "Wanted to try making a fairly complex and varied game.",
   },
   {
@@ -43,8 +39,6 @@ const projects = [
     tags: ["AI", "Research", "Next.js"],
     href: "https://briefing.maxcooperevans.com",
     icon: Building2,
-    iconBg: "bg-violet-500/10",
-    iconColor: "text-violet-400",
     reason: "To make initial research more efficient.",
   },
   {
@@ -53,8 +47,6 @@ const projects = [
       "Scrapes job boards daily, uses the Claude API to score each role against my specific criteria, and sends a formatted email digest every morning via GitHub Actions.",
     tags: ["Claude API", "Python", "GitHub Actions"],
     icon: Briefcase,
-    iconBg: "bg-emerald-500/10",
-    iconColor: "text-emerald-400",
     reason: "Tired of manually checking job boards and comparing them to my requirements.",
   },
   {
@@ -64,8 +56,6 @@ const projects = [
     tags: ["Node.js", "Express", "Supabase"],
     href: "https://mini.tracker.maxcooperevans.com",
     icon: Clock,
-    iconBg: "bg-sky-500/10",
-    iconColor: "text-sky-400",
     reason: "Makes tracking my stats easier and more enjoyable.",
   },
   {
@@ -75,8 +65,6 @@ const projects = [
     tags: ["TypeScript", "React", "Game Dev"],
     href: "https://logic.maxcooperevans.com",
     icon: Puzzle,
-    iconBg: "bg-indigo-500/10",
-    iconColor: "text-indigo-400",
     reason: "Haven't done any formal logic since first year of undergrad, wanted to test myself.",
   },
   {
@@ -86,8 +74,6 @@ const projects = [
     tags: ["Goodreads", "Python"],
     href: "https://goodreadsbookrecommender.maxcooperevans.com",
     icon: BookOpen,
-    iconBg: "bg-rose-500/10",
-    iconColor: "text-rose-400",
     reason: "To have a better way of picking my next novel.",
   },
 ];
@@ -96,7 +82,7 @@ export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-surface">
       <Nav
         onContactClick={() => setContactOpen((o) => !o)}
         contactOpen={contactOpen}
@@ -106,52 +92,52 @@ export default function Home() {
 
         {/* Hero */}
         <section className="mb-16">
-          <p className="text-xs font-semibold tracking-widest text-blue-400 uppercase mb-4">
+          <p className="text-xs font-semibold tracking-widest text-accent uppercase mb-4">
             Portfolio
           </p>
-          <h1 className="text-4xl font-bold text-slate-100 tracking-tight mb-3">
+          <h1 className="text-4xl font-bold text-heading tracking-tight mb-3">
             Things I&apos;ve built
           </h1>
-          <p className="text-slate-400 mb-8 text-base leading-relaxed">
+          <p className="text-muted mb-8 text-base leading-relaxed">
             A selection of projects — some polished, some experiments.
           </p>
           <button
             onClick={() => setContactOpen((o) => !o)}
-            className="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-colors"
+            className="px-5 py-2.5 rounded-lg bg-accent text-white text-sm font-medium hover:opacity-90 transition-opacity"
           >
             {contactOpen ? "Close" : "Get in touch"}
           </button>
 
           {contactOpen && (
-            <div className="mt-5 p-5 rounded-xl border border-slate-700 bg-slate-800/60 flex flex-col gap-3 max-w-xs">
+            <div className="mt-5 p-5 rounded-xl border border-edge bg-card flex flex-col gap-3 max-w-xs">
               <a
                 href="mailto:maxcooperevans@gmail.com"
-                className="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition-colors text-sm"
+                className="flex items-center gap-3 text-muted hover:text-accent transition-colors text-sm"
               >
-                <span className="text-base">✉️</span>
+                <span>✉️</span>
                 maxcooperevans@gmail.com
               </a>
               <a
                 href="tel:+4407562649909"
-                className="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition-colors text-sm"
+                className="flex items-center gap-3 text-muted hover:text-accent transition-colors text-sm"
               >
-                <span className="text-base">📞</span>
+                <span>📞</span>
                 +44 07562 649909
               </a>
               <a
                 href="https://www.linkedin.com/in/max-cooper-evans-866992230"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition-colors text-sm"
+                className="flex items-center gap-3 text-muted hover:text-accent transition-colors text-sm"
               >
-                <span className="text-base">💼</span>
+                <span>💼</span>
                 linkedin.com/in/max-cooper-evans
               </a>
             </div>
           )}
         </section>
 
-        {/* Projects grid */}
+        {/* Projects */}
         <section id="projects">
           <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
             {projects.map((project) => (
@@ -161,7 +147,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-slate-700/50 py-8 text-center text-slate-500 text-sm">
+      <footer className="border-t border-edge py-8 text-center text-muted text-sm">
         <p>Built with Next.js &amp; Tailwind CSS &mdash; {new Date().getFullYear()}</p>
       </footer>
     </div>
