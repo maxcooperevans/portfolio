@@ -83,6 +83,7 @@ const forFun = [
 
 export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<"tools" | "forFun">("tools");
 
   return (
     <div className="flex flex-col min-h-screen bg-surface">
@@ -101,9 +102,6 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-heading tracking-tight mb-3">
             Things I&apos;ve built
           </h1>
-          <p className="text-muted mb-8 text-base leading-relaxed">
-            Mostly built to solve real problems. Some just for the fun of it.
-          </p>
           <button
             onClick={() => setContactOpen((o) => !o)}
             className="px-5 py-2.5 rounded-lg border-[1.5px] border-accent text-accent text-sm font-medium hover:bg-accent-tint transition-colors"
@@ -140,27 +138,30 @@ export default function Home() {
           )}
         </section>
 
-        {/* Featured projects */}
+        {/* Tabs */}
         <section id="projects">
-          <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-            {featured.map((project) => (
-              <ProjectCard key={project.title} {...project} />
-            ))}
+          <div className="flex items-center gap-0 border-b border-edge mb-8">
+            {(["tools", "forFun"] as const).map((tab) => {
+              const label = tab === "tools" ? "Tools" : "For Fun";
+              const active = activeTab === tab;
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-5 py-2.5 text-sm font-medium transition-colors relative -mb-px ${
+                    active
+                      ? "text-accent border-b-2 border-accent"
+                      : "text-muted hover:text-heading"
+                  }`}
+                >
+                  {label}
+                </button>
+              );
+            })}
           </div>
-        </section>
 
-        {/* For fun divider */}
-        <div className="flex items-center gap-3 mt-14 mb-6">
-          <span className="text-xs font-semibold tracking-widest text-muted uppercase whitespace-nowrap">
-            For fun
-          </span>
-          <div className="flex-1 h-px bg-edge" />
-        </div>
-
-        {/* For fun projects */}
-        <section>
           <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-            {forFun.map((project) => (
+            {(activeTab === "tools" ? featured : forFun).map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
           </div>
