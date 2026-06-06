@@ -13,7 +13,15 @@ import {
   BookOpen,
 } from "lucide-react";
 
-const projects = [
+const featured = [
+  {
+    title: "Job Board Scraper & Digest",
+    description:
+      "Scrapes job boards daily, uses the Claude API to score each role against my specific criteria, and sends a formatted email digest every morning via GitHub Actions.",
+    tags: ["Claude API", "Python", "GitHub Actions"],
+    icon: Briefcase,
+    reason: "Tired of manually checking job boards and comparing them to my requirements.",
+  },
   {
     title: "Investment Memo Generator",
     description:
@@ -24,15 +32,6 @@ const projects = [
     reason: "I wanted to take a tool I'd made and improve it.",
   },
   {
-    title: "Basketball Simulator",
-    description:
-      "Attempt at a basketball simulator game with a user-created player.",
-    tags: ["TypeScript", "React", "Game Dev"],
-    href: "https://hoops.maxcooperevans.com/",
-    icon: Trophy,
-    reason: "Wanted to try making a fairly complex and varied game.",
-  },
-  {
     title: "Company Briefing Tool",
     description:
       "Enter a company name and get an AI-powered briefing covering key facts, recent news, and business insights.",
@@ -41,22 +40,17 @@ const projects = [
     icon: Building2,
     reason: "To make initial research more efficient.",
   },
+];
+
+const forFun = [
   {
-    title: "Job Board Scraper & Digest",
+    title: "Goodreads Book Recommender",
     description:
-      "Scrapes job boards daily, uses the Claude API to score each role against my specific criteria, and sends a formatted email digest every morning via GitHub Actions.",
-    tags: ["Claude API", "Python", "GitHub Actions"],
-    icon: Briefcase,
-    reason: "Tired of manually checking job boards and comparing them to my requirements.",
-  },
-  {
-    title: "NYT Mini Crossword Time Tracker",
-    description:
-      "Tracking my NYT Mini crossword times and visualising my performance over time.",
-    tags: ["Node.js", "Express", "Supabase"],
-    href: "https://mini.tracker.maxcooperevans.com",
-    icon: Clock,
-    reason: "Makes tracking my stats easier and more enjoyable.",
+      "Input your Goodreads data and get personalised book recommendations.",
+    tags: ["Goodreads", "Python"],
+    href: "https://goodreadsbookrecommender.maxcooperevans.com",
+    icon: BookOpen,
+    reason: "To have a better way of picking my next novel.",
   },
   {
     title: "Logic Puzzle Game",
@@ -68,13 +62,22 @@ const projects = [
     reason: "Haven't done any formal logic since first year of undergrad, wanted to test myself.",
   },
   {
-    title: "Goodreads Book Recommender",
+    title: "Basketball Simulator",
     description:
-      "Input your Goodreads data and get personalised book recommendations.",
-    tags: ["Goodreads", "Python"],
-    href: "https://goodreadsbookrecommender.maxcooperevans.com",
-    icon: BookOpen,
-    reason: "To have a better way of picking my next novel.",
+      "Attempt at a basketball simulator game with a user-created player.",
+    tags: ["TypeScript", "React", "Game Dev"],
+    href: "https://hoops.maxcooperevans.com/",
+    icon: Trophy,
+    reason: "Wanted to try making a fairly complex and varied game.",
+  },
+  {
+    title: "NYT Mini Crossword Time Tracker",
+    description:
+      "Tracking my NYT Mini crossword times and visualising my performance over time.",
+    tags: ["Node.js", "Express", "Supabase"],
+    href: "https://mini.tracker.maxcooperevans.com",
+    icon: Clock,
+    reason: "Makes tracking my stats easier and more enjoyable.",
   },
 ];
 
@@ -99,7 +102,7 @@ export default function Home() {
             Things I&apos;ve built
           </h1>
           <p className="text-muted mb-8 text-base leading-relaxed">
-            A selection of projects — some polished, some experiments.
+            Mostly built to solve real problems. Some just for the fun of it.
           </p>
           <button
             onClick={() => setContactOpen((o) => !o)}
@@ -137,10 +140,27 @@ export default function Home() {
           )}
         </section>
 
-        {/* Projects */}
+        {/* Featured projects */}
         <section id="projects">
           <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-            {projects.map((project) => (
+            {featured.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
+          </div>
+        </section>
+
+        {/* For fun divider */}
+        <div className="flex items-center gap-3 mt-14 mb-6">
+          <span className="text-xs font-semibold tracking-widest text-muted uppercase whitespace-nowrap">
+            For fun
+          </span>
+          <div className="flex-1 h-px bg-edge" />
+        </div>
+
+        {/* For fun projects */}
+        <section>
+          <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+            {forFun.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
           </div>
