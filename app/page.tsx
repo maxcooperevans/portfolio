@@ -11,9 +11,19 @@ import {
   Clock,
   Puzzle,
   BookOpen,
+  Target,
 } from "lucide-react";
 
 const featured = [
+  {
+    title: "RaiseScout",
+    description:
+      "An investor-fit tool that discovers, scores, and ranks VCs against a founder's raise, with source-cited evidence on every claim to keep it grounded rather than hallucinated.",
+    tags: ["AI", "Next.js"],
+    href: "https://www.raise.maxcooperevans.com",
+    icon: Target,
+    reason: "Fundraising is time-consuming enough without spending hours manually researching whether each investor is even a fit.",
+  },
   {
     title: "Job Board Scraper & Digest",
     description:
