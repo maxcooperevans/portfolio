@@ -7,12 +7,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.maxcooperevans.com"),
   title: "Max Cooper Evans — Portfolio",
-  description:
-    "A selection of projects I've built — from AI tools to games and trackers.",
+  description: "A selection of projects",
   openGraph: {
     title: "Max Cooper Evans — Portfolio",
-    description:
-      "A selection of projects I've built — from AI tools to games and trackers.",
+    description: "A selection of projects",
     url: "https://www.maxcooperevans.com",
     siteName: "Max Cooper Evans",
     type: "website",
@@ -21,8 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Max Cooper Evans — Portfolio",
-    description:
-      "A selection of projects I've built — from AI tools to games and trackers.",
+    description: "A selection of projects",
   },
 };
 
