@@ -5,10 +5,8 @@ import ProjectCard from "@/components/ProjectCard";
 import Nav from "@/components/Nav";
 import {
   FileText,
-  Trophy,
   Building2,
   Briefcase,
-  Clock,
   Puzzle,
   BookOpen,
   Target,
@@ -70,24 +68,6 @@ const forFun = [
     href: "https://logic.maxcooperevans.com",
     icon: Puzzle,
     reason: "Haven't done any formal logic since first year of undergrad, wanted to test myself.",
-  },
-  {
-    title: "Basketball Simulator",
-    description:
-      "Attempt at a basketball simulator game with a user-created player.",
-    tags: ["TypeScript", "React", "Game Dev"],
-    href: "https://hoops.maxcooperevans.com/",
-    icon: Trophy,
-    reason: "Wanted to try making a fairly complex and varied game.",
-  },
-  {
-    title: "NYT Mini Crossword Time Tracker",
-    description:
-      "Tracking my NYT Mini crossword times and visualising my performance over time.",
-    tags: ["Node.js", "Express", "Supabase"],
-    href: "https://mini.tracker.maxcooperevans.com",
-    icon: Clock,
-    reason: "Makes tracking my stats easier and more enjoyable.",
   },
 ];
 
